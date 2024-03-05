@@ -1,0 +1,10 @@
+.row {
+  display: flex;
+}
+.card {
+  padding: 3px;
+  margin: 3px;
+  max-width: 10%;
+  align-items: center;
+  cursor: pointer;
+}

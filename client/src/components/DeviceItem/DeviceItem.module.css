@@ -1,0 +1,22 @@
+.card {
+  width: 150px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.img {
+  width: 150px;
+  height: 150px;
+}
+.infoBlock {
+  display: flex;
+  justify-content: space-between;
+  color: rgba(0, 0, 0, 0.5);
+}
+.rating {
+  display: flex;
+  align-items: center;
+}
+.start {
+  width: 20px;
+  height: 20px;
+}
