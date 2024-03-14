@@ -5,12 +5,14 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Button } from "react-bootstrap";
 import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
-import { SHOP_ROUTE } from "../../utils/consts";
+import { ADMIN_ROUTE, LOGIN_ROUTE, SHOP_ROUTE } from "../../utils/consts";
 import Styles from "./NavBar.module.css";
 import { observer } from "mobx-react-lite";
+import { useHistory } from "react-router-dom/cjs/react-router-dom";
 
 const NavBar = observer(() => {
   const { user } = useContext(Context);
+  const history = useHistory();
   return (
     <Navbar bg="dark" data-bs-theme="dark">
       <Container>
@@ -19,10 +21,19 @@ const NavBar = observer(() => {
         </NavLink>
         {user.isAuth ? (
           <Nav className="ml-auto">
-            <Button variant={"outline-light"} className="me-4">
+            <Button
+              variant={"outline-light"}
+              onClick={() => history.push(ADMIN_ROUTE)}
+              className="me-4"
+            >
               Админ панель
             </Button>
-            <Button variant={"outline-light"}>Выйти</Button>
+            <Button
+              variant={"outline-light"}
+              onClick={() => history.push(LOGIN_ROUTE)}
+            >
+              Выйти
+            </Button>
           </Nav>
         ) : (
           <Nav className="ml-auto">
