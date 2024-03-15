@@ -10,7 +10,10 @@ const DeviceItem = ({ device }) => {
   return (
     <Col md={3} onClick={() => history.push(DEVICE_ROUTE + "/" + device.id)}>
       <Card className={Style.card} border={"light"}>
-        <Image className={Style.img} src={device.img} />
+        <Image
+          className={Style.img}
+          src={process.env.REACT_APP_API_URL + device.img}
+        />
         <div className={Style.infoBlock}>
           <div>Sumsung</div>
           <div className={Style.rating}>
